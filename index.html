@@ -42,6 +42,7 @@
                 </ul>
             </div>
         </aside>
+        <div class="divider" id="divider"></div>
     </div>
 
     <footer>
@@ -669,6 +670,28 @@ generateFilteredSongList();
 
 // Add event listener for filter changes to trigger song list generation
 document.getElementById("filterDropdown").addEventListener("change", generateFilteredSongList);
+
+        //container size change by user
+        const divider = document.getElementById('divider');
+        const container = document.querySelector('.container');
+        let isResizing = false;
+
+        divider.addEventListener('mousedown', function (e) {
+            isResizing = true;
+            document.addEventListener('mousemove', resize);
+            document.addEventListener('mouseup', stopResize);
+        });
+
+        function resize(e) {
+            if (isResizing) {
+                container.style.width = (e.clientX - container.offsetLeft) + 'px';
+            }
+        }
+
+        function stopResize() {
+            isResizing = false;
+            document.removeEventListener('mousemove', resize);
+        }
 
     </script>
 </body>
