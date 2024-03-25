@@ -23,6 +23,12 @@ body {
     flex-direction: column;
 }
 
+.divider {
+    cursor: ew-resize;
+    width: 5px;
+    background-color: #000000;
+}
+
 article {
     background-color: #f3d8c7;
     color: #000000;
