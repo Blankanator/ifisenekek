@@ -102,10 +102,10 @@ footer {
     }
 
     article {
-        flex: 2; /* Set a flex ratio of 2:1 */
+        flex: 3; /* Set a flex ratio of 2:1 */
     }
     
     aside {
-        flex: 1; /* Set a flex ratio of 2:1 */
+        flex: 2; /* Set a flex ratio of 2:1 */
     }
 }
