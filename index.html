@@ -788,15 +788,14 @@
             // You can customize the display format here
             const sheetMusicHTML = `
         <h2>${song.title}</h2>
-        <p>Csillag csillag: ${song.cscs} |
-            Halacskás: ${song.hala} |
-            Gyömösz: ${song.gyom} |
-            Nehémiás: ${song.nehe} |
-            Jóel: ${song.joel} |
-            Salamon: ${song.sala} |
-            Bérea: ${song.bere} |
-            Jóseb: ${song.jose} </p>
-        <img src="${song.sheetMusic}" style="border:none;"></img>
+            <table>
+                <tr><td>Nehémiás: </td><td>${song.nehe}</td><td>|&nbsp&nbspCsillag csillag: </td><td>${song.cscs} </td></tr>
+                <tr><td>Jóel: </td><td>${song.joel}</td><td>|&nbsp&nbspHalacskás: </td><td>${song.hala} </td></tr>
+                <tr><td>Salamon: </td><td>${song.sala}</td><td>|&nbsp&nbspGyömösz: </td><td>${song.gyom} </td></tr>
+                <tr><td>Bérea: </td><td>${song.bere}</td><td>|  </td></tr>
+                <tr><td>Jóseb: </td><td>${song.jose}</td><td>|  </td></tr>
+            </table>
+        <img src="${song.sheetMusic}" alt="Ez az ének még nincsen feltöltve. Ha megvan neked, küldd el nekem :)" style="border:none;"></img>
     `;
             //style="border:none;"
             songDisplayContainer.innerHTML = sheetMusicHTML;
