@@ -537,3 +537,34 @@
     padding-right: 30px !important;
   }
 }
+
+/* v34 — sheet scrolling + mobile polish */
+.sheet-stage{overscroll-behavior-x:contain!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important}
+.sheet-stage.is-pannable{touch-action:pan-y!important;cursor:grab}
+.sheet-stage.is-dragging{cursor:grabbing}
+@media(max-width:700px){
+  .song-page-wrap{padding-left:12px!important;padding-right:12px!important}
+  .back-link{margin-bottom:14px!important}
+  .song-detail-header{margin-bottom:14px!important}
+  .song-detail-header h1{margin-bottom:12px!important;font-size:clamp(1.65rem,8vw,2.25rem)!important;line-height:1.08!important}
+  .version-picker{gap:6px!important}
+  .version-btn{padding:8px 10px!important;font-size:.84rem!important}
+  .song-navigation{gap:8px!important;margin-bottom:12px!important}
+  .song-nav-link{padding:9px 10px!important}
+  .song-nav-title{white-space:normal!important;line-height:1.25!important;font-size:.8rem!important}
+  .song-sheet-search{margin-bottom:10px!important}
+  .sheet-search-input{font-size:16px!important}
+  .source-card{border-radius:13px!important}
+  .source-card-head{padding:12px!important}
+  .sheet-controls{display:grid!important;grid-template-columns:1fr auto!important;gap:8px!important;align-items:center!important;padding:10px!important}
+  .sheet-controls>label{grid-column:1/-1!important;width:auto!important;margin:0!important}
+  .sheet-controls input[type=range]{min-width:0!important;width:100%!important}
+  .sheet-controls output{min-width:44px!important}
+  .zoom-presets{grid-column:1/-1!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;width:100%!important;gap:6px!important}
+  .zoom-preset{min-width:0!important;width:100%!important;padding:8px 5px!important}
+  .sheet-stage{margin:8px -4px 0!important;padding:4px!important;border-radius:10px!important}
+}
+@media(max-width:430px){
+  .song-navigation{grid-template-columns:1fr!important}
+  .song-nav-link.next{text-align:left!important;align-items:flex-start!important}
+}
