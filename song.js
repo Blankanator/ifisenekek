@@ -177,7 +177,7 @@ function enableDragPan(stage){
 
     stage.setPointerCapture(e.pointerId);
     stage.classList.add('is-dragging');
-    e.preventDefault();
+    if (e.pointerType === 'mouse') e.preventDefault();
   });
 
   stage.addEventListener('pointermove', e=>{
@@ -199,7 +199,7 @@ function enableDragPan(stage){
     stage.classList.remove('is-dragging');
   });
 
-    stage.addEventListener('wheel', e => {
+  stage.addEventListener('wheel', e => {
     if (Math.abs(e.deltaY) >= Math.abs(e.deltaX) && e.deltaY !== 0) {
       window.scrollBy({top:e.deltaY,left:0,behavior:'auto'});
       e.preventDefault();
