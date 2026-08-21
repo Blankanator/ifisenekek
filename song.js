@@ -183,7 +183,6 @@ function enableDragPan(stage){
   stage.addEventListener('pointermove', e=>{
     if (!dragging) return;
     stage.scrollLeft = startScrollLeft - (e.clientX - startX);
-    stage.scrollTop = startScrollTop - (e.clientY - startY);
   });
 
   function endDrag(e){
@@ -199,6 +198,13 @@ function enableDragPan(stage){
     dragging = false;
     stage.classList.remove('is-dragging');
   });
+
+    stage.addEventListener('wheel', e => {
+    if (Math.abs(e.deltaY) >= Math.abs(e.deltaX) && e.deltaY !== 0) {
+      window.scrollBy({top:e.deltaY,left:0,behavior:'auto'});
+      e.preventDefault();
+    }
+  }, {passive:false});
 }
 
 function setActive(active){
